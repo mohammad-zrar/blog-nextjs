@@ -5,6 +5,6 @@ export default function PostHeader(props: any) {
     const { title, image } = props;
     return <header className={classes.header}>
         <h1>{title}</h1>
-        <Image src={image} alt={title} width={200} height={150} />
+        <Image src={image} alt={title} width={200} height={150} style={{ width: 'auto', height: 'auto' }} />
     </header>
 }
