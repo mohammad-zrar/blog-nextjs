@@ -16,13 +16,17 @@ export default function Notification(props: any) {
   }
 
   const cssClasses = `${classes.notification} ${statusClasses}`;
+  const notificationRoot = document.getElementById('notifications')
 
-  return (
-    <div className={cssClasses}>
-      <h2>{title}</h2>
-      <p>{message}</p>
-    </div>
-  );
+  return notificationRoot
+    ? ReactDOM.createPortal(
+      <div className={cssClasses}>
+        <h2>{title}</h2>
+        <p>{message}</p>
+      </div>,
+      notificationRoot
+    )
+    : null;
 }
 
 
